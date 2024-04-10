@@ -1,0 +1,21 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@font-face {
+    font-family: kamerik-mav;
+    src: url(../fonts/kamerik205-heavy.woff2);
+}
+body {
+    font-family: kamerik-mav;
+    color: white;
+}
+.layer {
+    height: 100vh;
+    width: 100vw;
+    background-position: center;
+    background-size: cover;
+    position: fixed;
+
+}
