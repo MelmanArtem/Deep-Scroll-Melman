@@ -16,7 +16,7 @@ body {
     overflow-x: hidden;
 }
 .scene {
-    height: 400vh;
+    height: 550vh;
 }
 .layer {
     height: 100vh;
@@ -57,17 +57,48 @@ body {
     to { scale: 2; }
 }
 .layer:nth-child(5) {
-    animation-name: animation-5
+    opacity: 0;
+    animation-range: 130vh 300vh;
+    animation-name: animation-end;
 }
-@keyframes animation-5 {
-    to { scale: 3; }
+@keyframes animation-end {
+     to { opacity: 1; }  
 }
 .layer__content {
     text-align: center;
     padding: 5vh 5vw;
     backdrop-filter: blur(30px) brightness(.99);
+    animation-timeline: scroll();
+    animation-timing-function: linear;
+    animation-fill-mode: both;
+    animation-range: 0 200vh;
+    animation-name: animation-start;
+}
+@keyframes animation-start { 
+    to { opacity: 0; filter: blur(20px); } 
 }
 .layer__content h1 {
     text-transform: uppercase;
     font-size: calc(var(--index) * 3.7);
+    line-height: 1em;
+    letter-spacing: -.15vw;
+}
+.layer__end h3 {
+    font-size: 4rem;  
+    position: relative; 
+}
+.layer__end::before {
+    content: '';
+    background-color: #01122b;
+    inset: 0;
+    opacity: 0;
+    position: absolute;
+    animation-timeline: scroll();
+    animation-timing-function: linear;
+    animation-fill-mode: both;
+    animation-range: 300vh 450vh;
+    animation-name: animation-background;
+}
+@keyframes animation-background { 
+    to { opacity: 1; } 
 }
